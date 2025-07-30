@@ -1,0 +1,137 @@
+/* --- Complete code for your globals.css or index.css file --- */
+
+/* --- Tailwind Base & Components --- */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* --- "Royal Hyderabadi" Theme --- */
+@layer base {
+  :root {
+    /* Palette: Gold, Teal, and Pearl */
+    --background: 48 33% 94%; /* Pearl White */
+    --foreground: 180 35% 15%; /* Deep Teal/Charcoal */
+    --card: 48 50% 98%;
+    --card-foreground: 180 35% 15%;
+    --popover: 48 50% 98%;
+    --popover-foreground: 180 35% 15%;
+    --primary: 42 94% 55%; /* Rich Gold */
+    --primary-foreground: 180 35% 15%;
+    --secondary: 180 20% 90%; /* Muted Teal */
+    --secondary-foreground: 180 35% 15%;
+    --muted: 180 20% 95%;
+    --muted-foreground: 180 15% 45%;
+    --accent: 42 90% 85%; /* Soft Gold */
+    --accent-foreground: 180 35% 15%;
+    --destructive: 0 72% 51%; /* Deep Crimson */
+    --destructive-foreground: 0 0% 98%;
+    --border: 180 20% 88%;
+    --input: 180 20% 92%;
+    --ring: 42 94% 55%;
+    --radius: 0.5rem;
+
+    /* Smart Design Tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(42 94% 55%), hsl(38 92% 60%));
+    --shadow-elegant: 0 4px 20px -2px hsl(var(--primary) / 0.2);
+    --shadow-soft: 0 2px 10px -2px hsl(180 35% 15% / 0.08);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  @layer components {
+  .hero-section {
+    width: 100%;
+    background-color: transparent;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    text-align: center;
+  }
+  @media (min-width: 768px) {
+    .hero-section {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
+  }
+
+  .main-heading-gradient {
+    /* Use the primary gradient we defined in the theme */
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    /* You can adjust font size here if needed */
+    font-size: 3rem; /* text-5xl */
+    font-weight: 700; /* font-bold */
+  }
+  @media (min-width: 768px) {
+    .main-heading-gradient {
+      font-size: 4.5rem; /* md:text-7xl */
+    }
+  }
+
+  .tagline {
+    margin-top: 0.5rem; /* mt-2 */
+    font-size: 1.125rem; /* text-lg */
+    color: hsl(var(--muted-foreground)); /* text-muted-foreground */
+  }
+  @media (min-width: 768px) {
+    .tagline {
+      font-size: 1.25rem; /* md:text-xl */
+    }
+  }
+}
+
+  .dark {
+    --background: 180 25% 10%; /* Very Dark Teal */
+    --foreground: 48 33% 94%; /* Pearl White */
+    --card: 180 25% 12%;
+    --card-foreground: 48 33% 94%;
+    --popover: 180 25% 12%;
+    --popover-foreground: 48 33% 94%;
+    --primary: 42 94% 60%; /* Luminous Gold */
+    --primary-foreground: 180 35% 10%;
+    --secondary: 180 25% 15%; /* Dark Muted Teal */
+    --secondary-foreground: 48 33% 94%;
+    --muted: 180 25% 15%;
+    --muted-foreground: 180 15% 65%;
+    --accent: 42 90% 25%; /* Rich Dark Gold */
+    --accent-foreground: 48 33% 94%;
+    --destructive: 0 80% 65%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 180 25% 18%;
+    --input: 180 25% 18%;
+    --ring: 42 94% 60%;
+    
+    /* Smart Design Tokens - dark mode */
+    --shadow-elegant: 0 4px 20px -2px hsl(var(--primary) / 0.25);
+    --shadow-soft: 0 2px 10px -2px hsl(0 0% 0% / 0.2);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Poppins', sans-serif; /* Default body font */
+    
+    /* BACKGROUND IMAGE: Replace with your chosen image url */
+    background-image:
+      linear-gradient(to bottom, hsl(var(--background) / 0.8), hsl(var(--background) / 0.95)),
+      url('https://images.unsplash.com/photo-1588614358352-26197ead3a36?q=80&w=2070'); /* Example: Damask Pattern */
+    
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Creates a modern parallax effect */
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Prata', serif; /* Elegant heading font */
+  }
+}
+
+/* --- Custom Utility Classes --- */
+@layer utilities {
+  .bg-gradient-primary {
+    background: var(--gradient-primary);
+  }
+}
